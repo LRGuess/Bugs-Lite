@@ -6,10 +6,10 @@ TagManager:
   tags:
   - Barriers
   - Particles
-  - Yur end!!!!!
   - AudioPlayer
   - Platform
-  - Coin
+  - GameOver
+  - Portal
   layers:
   - Default
   - TransparentFX

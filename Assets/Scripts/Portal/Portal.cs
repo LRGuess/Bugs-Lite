@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class Portal : MonoBehaviour
 {
-    public SceneAsset sceneAsset;
+    [SerializeField] private SceneAsset sceneAsset;
 
     void OnCollisionEnter2D(Collision2D col)
     {

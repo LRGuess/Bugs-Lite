@@ -265,29 +265,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 547711455}
-  - component: {fileID: 547711454}
   - component: {fileID: 547711456}
-  - component: {fileID: 547711457}
   m_Layer: 0
-  m_Name: GameManager
+  m_Name: SceneManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &547711454
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 547711453}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b35c3283fb5b9c468718bbf473e26e0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ad: {fileID: 1209430870}
 --- !u!4 &547711455
 Transform:
   m_ObjectHideFlags: 0
@@ -312,22 +297,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 547711453}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 98a4829ffd021f442953ea060d081635, type: 3}
+  m_Script: {fileID: 11500000, guid: 68e1afcdffbff0145a8ed81ab2099044, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &547711457
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 547711453}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 98f7db0ab00d46744b0f21d75194c40c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isDeath: 1
+  sceneToLoad: {fileID: 0}
+  isTimed: 0
+  secondsToWait: 0
+  isSlider: 0
+  loaderSlider: {fileID: 0}
+  changeValue: 0
 --- !u!1 &654098998
 GameObject:
   m_ObjectHideFlags: 0
@@ -1000,13 +978,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 547711457}
-        m_TargetAssemblyTypeName: ChangeTheScene, Assembly-CSharp
-        m_MethodName: ChangeTheActualScene
-        m_Mode: 5
+      - m_Target: {fileID: 547711456}
+        m_TargetAssemblyTypeName: UniversalSceneChanger, Assembly-CSharp
+        m_MethodName: ImmidateChange
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 102900000, guid: c66d0f69e61682e4b900e5a8af4c65cf, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEditor.SceneAsset, UnityEditor.CoreModule
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: Mainmenu
@@ -1509,13 +1487,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 547711457}
-        m_TargetAssemblyTypeName: ChangeTheScene, Assembly-CSharp
-        m_MethodName: ChangeTheActualScene
-        m_Mode: 5
+      - m_Target: {fileID: 547711456}
+        m_TargetAssemblyTypeName: UniversalSceneChanger, Assembly-CSharp
+        m_MethodName: ImmidateChange
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 102900000, guid: 1102caa566b0b2242bf1fe96230b19e1, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEditor.SceneAsset, UnityEditor.CoreModule
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: Level1

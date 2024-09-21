@@ -32,7 +32,7 @@ public class PlayerMovment : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D col)
     {
-        if (col.gameObject.tag == "Finish")
+        if (col.gameObject.tag == "GameOver")
         {
             SceneManager.LoadScene("Respawn");
         }
