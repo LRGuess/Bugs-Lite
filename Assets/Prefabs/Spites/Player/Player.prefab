@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5576286279092862872}
   - component: {fileID: 3509647967749265876}
   - component: {fileID: 1041261592152484239}
+  - component: {fileID: 8334009173811411017}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -110,8 +111,6 @@ MonoBehaviour:
   WhiteParticles: {fileID: 295307651700426212}
   jumpForce: 7
   downForce: 4
-  menuScene: {fileID: 102900000, guid: c66d0f69e61682e4b900e5a8af4c65cf, type: 3}
-  minimapArrow: {fileID: 0}
 --- !u!61 &3509647967749265876
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -184,6 +183,26 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &8334009173811411017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 331437839209199823}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31aeee4c78e665748822b4077e9c1c72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MenuHotkey: 1
+  menuScene: {fileID: 102900000, guid: c66d0f69e61682e4b900e5a8af4c65cf, type: 3}
+  Level1Hotkey: 1
+  level1Scene: {fileID: 102900000, guid: 1102caa566b0b2242bf1fe96230b19e1, type: 3}
+  RestartHotkey: 1
+  ExitGameHotkey: 1
+  SettingsHotkey: 0
+  menuManager: {fileID: 0}
 --- !u!1 &806527875743078001
 GameObject:
   m_ObjectHideFlags: 0

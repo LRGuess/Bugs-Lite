@@ -132,6 +132,7 @@ GameObject:
   m_Component:
   - component: {fileID: 78339991}
   - component: {fileID: 78339994}
+  - component: {fileID: 78339995}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -172,6 +173,26 @@ MonoBehaviour:
   isSlider: 0
   loaderSlider: {fileID: 0}
   changeValue: 0
+--- !u!114 &78339995
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 78339989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31aeee4c78e665748822b4077e9c1c72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MenuHotkey: 0
+  menuScene: {fileID: 0}
+  Level1Hotkey: 1
+  level1Scene: {fileID: 102900000, guid: 1102caa566b0b2242bf1fe96230b19e1, type: 3}
+  RestartHotkey: 0
+  ExitGameHotkey: 1
+  SettingsHotkey: 1
+  menuManager: {fileID: 8264941702314763114}
 --- !u!1 &200780575
 GameObject:
   m_ObjectHideFlags: 0

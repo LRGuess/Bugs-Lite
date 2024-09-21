@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -12,7 +11,6 @@ public class PlayerMovment : MonoBehaviour
     [SerializeField] public ParticleSystem WhiteParticles;
     [SerializeField] public float jumpForce; //7
     [SerializeField] public float downForce; //4
-    [SerializeField] private SceneAsset menuScene;
 
     // Start is called before the first frame update
     void Start()
@@ -26,7 +24,6 @@ public class PlayerMovment : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        KeyBinds();
         HandleMovement();
     }
 
@@ -80,17 +77,6 @@ public class PlayerMovment : MonoBehaviour
         if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
         {
             GetComponent<Rigidbody2D>().AddForce(Vector2.down / downForce, ForceMode2D.Impulse);
-        }
-    }
-    void KeyBinds()
-    {
-        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.M))
-        {
-            SceneManager.LoadScene(menuScene.name);
-        }
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
 }

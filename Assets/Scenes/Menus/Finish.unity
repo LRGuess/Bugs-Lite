@@ -640,6 +640,7 @@ GameObject:
   m_Component:
   - component: {fileID: 466982489}
   - component: {fileID: 466982490}
+  - component: {fileID: 466982491}
   m_Layer: 0
   m_Name: MenuControler
   m_TagString: Untagged
@@ -680,6 +681,26 @@ MonoBehaviour:
   isSlider: 0
   loaderSlider: {fileID: 0}
   changeValue: 0
+--- !u!114 &466982491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 466982487}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31aeee4c78e665748822b4077e9c1c72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MenuHotkey: 1
+  menuScene: {fileID: 102900000, guid: c66d0f69e61682e4b900e5a8af4c65cf, type: 3}
+  Level1Hotkey: 1
+  level1Scene: {fileID: 102900000, guid: 1102caa566b0b2242bf1fe96230b19e1, type: 3}
+  RestartHotkey: 0
+  ExitGameHotkey: 1
+  SettingsHotkey: 0
+  menuManager: {fileID: 0}
 --- !u!1 &493850507
 GameObject:
   m_ObjectHideFlags: 0
