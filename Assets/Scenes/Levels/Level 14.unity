@@ -177,7 +177,7 @@ PrefabInstance:
     - target: {fileID: 950721547581565785, guid: cdc1908060f580245aeece33fb832ebb, type: 3}
       propertyPath: sceneAsset
       value: 
-      objectReference: {fileID: 102900000, guid: b855c8bbf28b5b649a645b74bb68292c, type: 3}
+      objectReference: {fileID: 102900000, guid: f131c81c36eff3246820638db926dd63, type: 3}
     - target: {fileID: 950721547581565786, guid: cdc1908060f580245aeece33fb832ebb, type: 3}
       propertyPath: m_Name
       value: Portal
