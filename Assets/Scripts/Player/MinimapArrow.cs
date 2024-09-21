@@ -10,20 +10,16 @@ public class MinimapArrow : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        portal = GameObject.Find("Portal");
+        portal = GameObject.FindWithTag("Portal"); // Find the GameObject with the "Portal" tag
         player = GameObject.Find("Player");
     }
 
     // Update is called once per frame
     void Update()
     {
-
-        // Rotate and point the minimap arrow at the portal
-        if (portal != null)
-        {
-            Vector3 direction = portal.transform.position - transform.position;
-            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-            transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-        }
+        transform.position = player.transform.position;
+        Vector3 direction = portal.transform.position - transform.position;
+        float angle = (Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg) - 90;
+        transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
     }
 }
