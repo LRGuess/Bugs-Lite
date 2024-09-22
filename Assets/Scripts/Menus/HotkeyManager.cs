@@ -1,47 +1,57 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor;
 using UnityEngine.SceneManagement;
 
 public class HotkeyManager : MonoBehaviour
 {
     [SerializeField] private bool MenuHotkey = false;
-    [SerializeField] private SceneAsset menuScene;
+    [SerializeField] private string menuScenePath;
+
     [SerializeField] private bool Level1Hotkey = true;
-    [SerializeField] private SceneAsset level1Scene;
+    [SerializeField] private string level1ScenePath;
+
     [SerializeField] private bool RestartHotkey = false;
     [SerializeField] private bool ExitGameHotkey = true;
     [SerializeField] private bool SettingsHotkey = true;
     [SerializeField] private MenuManager menuManager;
 
+#if UNITY_EDITOR
+    [SerializeField] private UnityEditor.SceneAsset menuScene;
+    [SerializeField] private UnityEditor.SceneAsset level1Scene;
+
+    private void OnValidate()
+    {
+        if (menuScene != null)
+        {
+            menuScenePath = UnityEditor.AssetDatabase.GetAssetPath(menuScene);
+        }
+        if (level1Scene != null)
+        {
+            level1ScenePath = UnityEditor.AssetDatabase.GetAssetPath(level1Scene);
+        }
+    }
+#endif
 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape) && ExitGameHotkey)
         {
-            // Open the menu
             Debug.Log("Quitting game");
             Application.Quit();
         }
         if (Input.GetKeyDown(KeyCode.M) && MenuHotkey)
         {
-            // Open the menu
-            SceneManager.LoadScene(menuScene.name);
+            SceneManager.LoadScene(menuScenePath);
         }
         if ((Input.GetKeyDown(KeyCode.F1) || Input.GetKeyDown(KeyCode.Return)) && Level1Hotkey)
         {
-            // Load level 1
-            SceneManager.LoadScene(level1Scene.name);
+            SceneManager.LoadScene(level1ScenePath);
         }
         if (Input.GetKeyDown(KeyCode.R) && RestartHotkey)
         {
-            // Restart the current level
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
         if (Input.GetKeyDown(KeyCode.S) && SettingsHotkey)
         {
-            // Open the settings
             menuManager.ToggleSettings();
         }
     }

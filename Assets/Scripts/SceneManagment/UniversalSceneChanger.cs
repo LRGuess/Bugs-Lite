@@ -1,14 +1,26 @@
 using System.Collections;
-using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
+using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class UniversalSceneChanger : MonoBehaviour
 {
+    // This stores the scene name for runtime use.
+    [SerializeField] private string sceneToLoadName;
 
-    [SerializeField] private SceneAsset sceneToLoad;
+#if UNITY_EDITOR
+    [SerializeField] private UnityEditor.SceneAsset sceneToLoad;
+
+    private void OnValidate()
+    {
+        if (sceneToLoad != null)
+        {
+            sceneToLoadName = sceneToLoad.name;  // Get the scene's name
+        }
+    }
+#endif
+
     [SerializeField] private bool isTimed;
     [SerializeField] private int secondsToWait;
     [SerializeField] private bool isSlider;
@@ -30,20 +42,21 @@ public class UniversalSceneChanger : MonoBehaviour
         if (isSlider && loaderSlider != null)
         {
             if (loaderSlider.value == changeValue)
-                SceneManager.LoadScene(sceneToLoad.name);
+                SceneManager.LoadScene(sceneToLoadName);
         }
     }
-    
+
     private IEnumerator WaitSeconds(int seconds)
     {
         yield return new WaitForSeconds(seconds);
-        SceneManager.LoadScene(sceneToLoad.name);
+        SceneManager.LoadScene(sceneToLoadName);
     }
 
-    public void ImmidateChange(SceneAsset scene)
+    public void ImmediateChange(string sceneName)
     {
-        SceneManager.LoadScene(scene.name);
+        SceneManager.LoadScene(sceneName);
     }
+
     public void ExitNow()
     {
         Application.Quit();

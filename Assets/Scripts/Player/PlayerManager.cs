@@ -11,6 +11,8 @@ public class PlayerMovment : MonoBehaviour
     [SerializeField] public ParticleSystem WhiteParticles;
     [SerializeField] public float jumpForce; //7
     [SerializeField] public float downForce; //4
+    
+    private 
 
     // Start is called before the first frame update
     void Start()

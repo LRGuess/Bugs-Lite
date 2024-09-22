@@ -301,6 +301,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68e1afcdffbff0145a8ed81ab2099044, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sceneToLoadName: 
   sceneToLoad: {fileID: 0}
   isTimed: 0
   secondsToWait: 0
@@ -320,13 +321,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MenuHotkey: 1
-  menuScene: {fileID: 102900000, guid: c66d0f69e61682e4b900e5a8af4c65cf, type: 3}
+  menuScenePath: Assets/Scenes/Menus/Main Menu.unity
   Level1Hotkey: 1
-  level1Scene: {fileID: 102900000, guid: 1102caa566b0b2242bf1fe96230b19e1, type: 3}
+  level1ScenePath: Assets/Scenes/Levels/Level 1.unity
   RestartHotkey: 0
   ExitGameHotkey: 1
   SettingsHotkey: 0
   menuManager: {fileID: 0}
+  menuScene: {fileID: 102900000, guid: c66d0f69e61682e4b900e5a8af4c65cf, type: 3}
+  level1Scene: {fileID: 102900000, guid: 1102caa566b0b2242bf1fe96230b19e1, type: 3}
 --- !u!1 &654098998
 GameObject:
   m_ObjectHideFlags: 0
@@ -656,15 +659,15 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
+  m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -939,14 +942,14 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 547711456}
         m_TargetAssemblyTypeName: UniversalSceneChanger, Assembly-CSharp
-        m_MethodName: ImmidateChange
-        m_Mode: 2
+        m_MethodName: ImmediateChange
+        m_Mode: 5
         m_Arguments:
-          m_ObjectArgument: {fileID: 102900000, guid: c66d0f69e61682e4b900e5a8af4c65cf, type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEditor.SceneAsset, UnityEditor.CoreModule
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Mainmenu
+          m_StringArgument: Main Menu
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1366036302
@@ -962,7 +965,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1272,15 +1275,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: Restart
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
+  m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1448,14 +1451,14 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 547711456}
         m_TargetAssemblyTypeName: UniversalSceneChanger, Assembly-CSharp
-        m_MethodName: ImmidateChange
-        m_Mode: 2
+        m_MethodName: ImmediateChange
+        m_Mode: 5
         m_Arguments:
-          m_ObjectArgument: {fileID: 102900000, guid: 1102caa566b0b2242bf1fe96230b19e1, type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEditor.SceneAsset, UnityEditor.CoreModule
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Level1
+          m_StringArgument: Level 1
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1854862806
@@ -1471,7 +1474,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.2824685, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

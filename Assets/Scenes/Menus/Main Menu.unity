@@ -167,6 +167,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68e1afcdffbff0145a8ed81ab2099044, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sceneToLoadName: 
   sceneToLoad: {fileID: 0}
   isTimed: 0
   secondsToWait: 0
@@ -186,13 +187,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MenuHotkey: 0
-  menuScene: {fileID: 0}
+  menuScenePath: 
   Level1Hotkey: 1
-  level1Scene: {fileID: 102900000, guid: 1102caa566b0b2242bf1fe96230b19e1, type: 3}
+  level1ScenePath: Assets/Scenes/Levels/Level 1.unity
   RestartHotkey: 0
   ExitGameHotkey: 1
   SettingsHotkey: 1
   menuManager: {fileID: 8264941702314763114}
+  menuScene: {fileID: 0}
+  level1Scene: {fileID: 102900000, guid: 1102caa566b0b2242bf1fe96230b19e1, type: 3}
 --- !u!1 &200780575
 GameObject:
   m_ObjectHideFlags: 0
@@ -771,14 +774,14 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 78339994}
         m_TargetAssemblyTypeName: UniversalSceneChanger, Assembly-CSharp
-        m_MethodName: ImmidateChange
-        m_Mode: 2
+        m_MethodName: ImmediateChange
+        m_Mode: 5
         m_Arguments:
-          m_ObjectArgument: {fileID: 102900000, guid: 1102caa566b0b2242bf1fe96230b19e1, type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEditor.SceneAsset, UnityEditor.CoreModule
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Level1
+          m_StringArgument: Level 1
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1226974978
