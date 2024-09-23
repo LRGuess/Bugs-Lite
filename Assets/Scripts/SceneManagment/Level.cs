@@ -1,18 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class Level : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public bool isCheckpoint;
+    public string currentLevel;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    void Start() {
+        currentLevel = SceneManager.GetActiveScene().name;
+        if (isCheckpoint) {
+            PlayerPrefs.SetString("CHECKPOINT", currentLevel);
+        }
     }
 }

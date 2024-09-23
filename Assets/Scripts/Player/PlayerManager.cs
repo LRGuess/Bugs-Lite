@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.SocialPlatforms.Impl;
 
-public class PlayerMovment : MonoBehaviour
+public class PlayerManager : MonoBehaviour
 {
     [Range(-20, 20)]
     [SerializeField] public float speed = 6;
@@ -11,8 +12,6 @@ public class PlayerMovment : MonoBehaviour
     [SerializeField] public ParticleSystem WhiteParticles;
     [SerializeField] public float jumpForce; //7
     [SerializeField] public float downForce; //4
-    
-    private 
 
     // Start is called before the first frame update
     void Start()
@@ -33,7 +32,7 @@ public class PlayerMovment : MonoBehaviour
     {
         if (col.gameObject.tag == "GameOver")
         {
-            SceneManager.LoadScene("Respawn");
+            SceneManager.LoadScene(PlayerPrefs.GetString("CHECKPOINT"));
         }
         if (col.gameObject.tag == "Platform")
         {

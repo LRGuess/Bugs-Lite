@@ -14,9 +14,12 @@ public class HotkeyManager : MonoBehaviour
     [SerializeField] private bool SettingsHotkey = true;
     [SerializeField] private MenuManager menuManager;
 
+    private PlayerManager player;
+
 #if UNITY_EDITOR
     [SerializeField] private UnityEditor.SceneAsset menuScene;
     [SerializeField] private UnityEditor.SceneAsset level1Scene;
+    
 
     private void OnValidate()
     {
@@ -31,6 +34,10 @@ public class HotkeyManager : MonoBehaviour
     }
 #endif
 
+    void Start()
+    {
+
+    }
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape) && ExitGameHotkey)
@@ -48,7 +55,7 @@ public class HotkeyManager : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.R) && RestartHotkey)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            SceneManager.LoadScene(PlayerPrefs.GetString("CHECKPOINT"));
         }
         if (Input.GetKeyDown(KeyCode.S) && SettingsHotkey)
         {
