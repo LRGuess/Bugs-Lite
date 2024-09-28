@@ -15,8 +15,8 @@ public class SettingsManager : MonoBehaviour
     public TMP_Text resolutionLabel;
 
     public AudioMixer theMixer;
-    public TMP_Text MasterLabel, MusicLabel, SFXLabel;
-    public Slider MasterSlider, MusicSlider, SFXSlider;
+    public TMP_Text MasterLabel, MusicLabel, SFXLabel, SpeedLabel, JumpforceLabel, DownforceLabel;
+    public Slider MasterSlider, MusicSlider, SFXSlider, SpeedSlider, JumpSlider, DownSlider;
 
     void Start()
     {
@@ -63,10 +63,32 @@ public class SettingsManager : MonoBehaviour
         MusicSlider.value = vol;
         theMixer.GetFloat("SFX", out vol);
         SFXSlider.value = vol;
+        SpeedSlider.value = PlayerPrefs.GetFloat("SPEED");
+        JumpSlider.value = PlayerPrefs.GetFloat("JUMPFORCE");
+        DownSlider.value = PlayerPrefs.GetFloat("DOWNFORCE");
 
         MasterLabel.text = Mathf.RoundToInt(MasterSlider.value + 80).ToString() + " %";
         MusicLabel.text = Mathf.RoundToInt(MusicSlider.value + 80).ToString() + " %";
         SFXLabel.text = Mathf.RoundToInt(SFXSlider.value + 80).ToString() + " %";
+        SpeedLabel.text = Mathf.RoundToInt(PlayerPrefs.GetFloat("SPEED")).ToString();
+        JumpforceLabel.text = Mathf.RoundToInt(PlayerPrefs.GetFloat("JUMPFORCE")).ToString();
+        DownforceLabel.text = Mathf.RoundToInt(PlayerPrefs.GetFloat("DOWNFORCE")).ToString();
+
+
+        if (!PlayerPrefs.HasKey("SPEED"))
+        {
+            PlayerPrefs.SetFloat("SPEED", 4);
+        }
+
+        if (!PlayerPrefs.HasKey("JUMPFORCE"))
+        {
+            PlayerPrefs.SetFloat("JUMPFORCE", 7);
+        }
+
+        if (!PlayerPrefs.HasKey("DOWNFORCE"))
+        {
+            PlayerPrefs.SetFloat("DOWNFORCE", 4);
+        }
     }
 
     public void ResLeft()
@@ -137,6 +159,24 @@ public class SettingsManager : MonoBehaviour
         theMixer.SetFloat("SFX", SFXSlider.value);
 
         PlayerPrefs.SetFloat("SFXVol", SFXSlider.value);
+    }
+
+    public void SetSpeed()
+    {
+        PlayerPrefs.SetFloat("SPEED", SpeedSlider.value);
+        SpeedLabel.text = PlayerPrefs.GetFloat("SPEED").ToString();
+    }
+
+    public void SetJumpforce()
+    {
+        PlayerPrefs.SetFloat("JUMPFORCE", JumpSlider.value);
+        JumpforceLabel.text = PlayerPrefs.GetFloat("JUMPFORCE").ToString();
+    }
+
+    public void SetDownforce()
+    {
+        PlayerPrefs.SetFloat("DOWNFORCE", DownSlider.value);
+        DownforceLabel.text = PlayerPrefs.GetFloat("DOWNFORCE").ToString();
     }
 }
 

@@ -7,7 +7,7 @@ using UnityEngine.SocialPlatforms.Impl;
 public class PlayerManager : MonoBehaviour
 {
     [Range(-20, 20)]
-    [SerializeField] public float speed = 6;
+    [SerializeField] public float speed; //6
     [SerializeField] public ParticleSystem GreenParticles;
     [SerializeField] public ParticleSystem WhiteParticles;
     [SerializeField] public float jumpForce; //7
@@ -16,6 +16,27 @@ public class PlayerManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (!PlayerPrefs.HasKey("SPEED"))
+        {
+            PlayerPrefs.SetFloat("SPEED", 4);
+            speed = PlayerPrefs.GetFloat("SPEED");
+        }
+        else speed = PlayerPrefs.GetFloat("SPEED");
+
+        if (!PlayerPrefs.HasKey("JUMPFORCE"))
+        {
+            PlayerPrefs.SetFloat("JUMPFORCE", 7);
+            jumpForce = PlayerPrefs.GetFloat("JUMPFORCE");
+        }
+        else jumpForce = PlayerPrefs.GetFloat("JUMPFORCE");
+
+        if (!PlayerPrefs.HasKey("DOWNFORCE"))
+        {
+            PlayerPrefs.SetFloat("DOWNFORCE", 4);
+            downForce = PlayerPrefs.GetFloat("DOWNFORCE");
+        }
+        else downForce = PlayerPrefs.GetFloat("DOWNFORCE");
+
         var emmision = GreenParticles.emission;
         emmision.enabled = false;
         var WhiteEmmision = WhiteParticles.emission;
