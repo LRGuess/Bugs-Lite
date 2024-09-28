@@ -411,7 +411,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad4db783cd378c4478055bcc9e2da0a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  finishScenePath: Assets/Scenes/Menus/Finish.unity
+  menuScenePath: Assets/Scenes/Menus/Main Menu.unity
   finishScene: {fileID: 102900000, guid: 25844aa923d4aa24394d234ea5432ec4, type: 3}
+  menuScene: {fileID: 102900000, guid: c66d0f69e61682e4b900e5a8af4c65cf, type: 3}
   waitTime: 30
 --- !u!4 &704665590
 Transform:

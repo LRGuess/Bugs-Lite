@@ -38,7 +38,15 @@ public class Portal : MonoBehaviour
         if (!string.IsNullOrEmpty(sceneName))
         {
             // Load the scene by its name
-            UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName);
+            if (sceneName != "Credits")
+            {
+                UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName);
+            }
+            else if (sceneName == "Credits")
+            {
+                PlayerPrefs.SetString("FINISHED", "true");
+                UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName);
+            }
         }
         else
         {

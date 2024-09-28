@@ -7,14 +7,24 @@ public class EndGameManager : MonoBehaviour
     // Store the scene path for runtime use.
     [SerializeField] private string finishScenePath;
 
+    [SerializeField] private string menuScenePath;
+
+    [SerializeField] public static bool isFinshed;
+
 #if UNITY_EDITOR
     [SerializeField] private UnityEditor.SceneAsset finishScene;
+
+    [SerializeField] private UnityEditor.SceneAsset menuScene;
 
     private void OnValidate()
     {
         if (finishScene != null)
         {
             finishScenePath = UnityEditor.AssetDatabase.GetAssetPath(finishScene);
+        }
+        if (menuScene != null)
+        {
+            menuScenePath = UnityEditor.AssetDatabase.GetAssetPath(menuScene);
         }
     }
 #endif
@@ -23,15 +33,23 @@ public class EndGameManager : MonoBehaviour
 
     void Update()
     {
-        if (SceneManager.GetActiveScene().name == "Credits")
-        {
-            StartCoroutine(WaitForCredits(waitTime));
+        if (PlayerPrefs.GetString("FINISHED") == "true") {
+            if (SceneManager.GetActiveScene().name == "Credits")
+            {
+                StartCoroutine(WaitForCredits(waitTime, finishScenePath));
+            }
+        }
+        else {
+            if (SceneManager.GetActiveScene().name == "Credits")
+            {
+                StartCoroutine(WaitForCredits(waitTime, menuScenePath));
+            }
         }
     }
 
-    private IEnumerator WaitForCredits(int seconds)
+    private IEnumerator WaitForCredits(int seconds, string gotoScenePath)
     {
         yield return new WaitForSeconds(seconds);
-        SceneManager.LoadScene(finishScenePath);
+        SceneManager.LoadScene(gotoScenePath);
     }
 }

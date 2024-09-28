@@ -54,6 +54,7 @@ public class UniversalSceneChanger : MonoBehaviour
 
     public void ImmediateChange(string sceneName)
     {
+        PlayerPrefs.SetString("FINISHED", "false");
         SceneManager.LoadScene(sceneName);
     }
 

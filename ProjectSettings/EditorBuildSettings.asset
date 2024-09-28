@@ -71,4 +71,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Menus/Respawn.unity
     guid: 6005a8b0a0bbec8409f3a858fda7b422
+  - enabled: 1
+    path: Assets/Scenes/Menus/About.unity
+    guid: 3a957748f6acb6d4dbe3d8d04143dc63
   m_configObjects: {}
