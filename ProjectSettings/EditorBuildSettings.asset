@@ -63,6 +63,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Levels/Level 16.unity
     guid: 80b98ab8d11c1c143b1dd1d711940cd1
   - enabled: 1
+    path: Assets/Scenes/Levels/Level 16_LS.unity
+    guid: 2a701d21fe9b1804787ae56717e6c045
+  - enabled: 1
     path: Assets/Scenes/Menus/Credits.unity
     guid: 7dadadbe8c339204d986ef13703cb889
   - enabled: 1
@@ -74,4 +77,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Menus/About.unity
     guid: 3a957748f6acb6d4dbe3d8d04143dc63
+  - enabled: 1
+    path: Assets/Scenes/Menus/Level Select.unity
+    guid: e69ba48d5acc7bd48af8d3b07963678c
   m_configObjects: {}
